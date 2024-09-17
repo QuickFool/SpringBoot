@@ -8,6 +8,10 @@
 <h1 th:text="${user.id != null ? 'Edit User' : 'Create User'}"></h1>
 
 <form th:action="@{/users/save}" th:object="${user}" method="post">
+
+  <!-- Скрытое поле для передачи id -->
+  <input type="hidden" th:field="*{id}" />
+
   <div>
     <label for="firstName">First Name:</label>
     <input type="text" id="firstName" th:field="*{firstName}" />
